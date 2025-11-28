@@ -1,10 +1,10 @@
 :root{
   --bg:#071027;
-  --card:#101a33; /* slightly lighter for readability */
-  --muted:#c2c8d3; /* brighter muted text */
+  --card:#101a33; 
+  --muted:#c2c8d3; 
   --accent-a: #ffb86b;
   --accent-b: #8be9fd;
-  --glass: rgba(255,255,255,0.04); /* slightly stronger glass */
+  --glass: rgba(255,255,255,0.04);
   --transition: 420ms cubic-bezier(.2,.9,.25,1);
 }
 *{box-sizing:border-box}
@@ -13,17 +13,15 @@ body{
   margin:0;
   font-family: 'Poppins', Inter, system-ui, -apple-system, "Segoe UI", Roboto, Arial;
   background: linear-gradient(180deg,var(--bg) 0%, #040612 100%);
-  color:#f4f7fc; /* lighter default text */
+  color:#f4f7fc; 
   -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale;
   overflow-x:hidden;
 }
 
-/* Respect reduced motion */
 @media (prefers-reduced-motion: reduce){
   *{transition:none !important; animation:none !important}
 }
 
-/* STARFIELD */
 #starfield {
     position: fixed;
     width: 100%;
@@ -34,7 +32,6 @@ body{
     background: transparent;
 }
 
-/* NAV */
 .navbar{
   background: linear-gradient(180deg, rgba(0,0,0,0.32), rgba(255,255,255,0.03));
   border-bottom: 1px solid rgba(255,255,255,0.06);
@@ -43,7 +40,6 @@ body{
   z-index: 12;
 }
 
-/* HERO */
 .hero{
   height:80vh;
   min-height:520px;
@@ -72,7 +68,7 @@ body{
   font-size:clamp(1.8rem,3.6vw,3.2rem);
   margin:0 0 .2rem 0;
   letter-spacing:-0.02em;
-  color:#ffffff; /* clearer */
+  color:#ffffff;
 }
 
 .hero-card p{
@@ -94,7 +90,6 @@ body{
 .reveal{opacity:0; transform: translateY(18px); transition: opacity 520ms ease, transform 520ms ease;}
 .reveal.show{ opacity:1; transform:none; }
 
-/* STORIES */
 .section-title{ font-size:1.6rem; margin-bottom: .6rem; }
 .grid{ padding:3rem 1rem; }
 .card{
@@ -164,7 +159,6 @@ body{
 
 .card .thumb{ box-shadow: inset 0 0 40px rgba(255,255,255,0.07); }
 
-/* MASKED TEXT SWEEP */
 .masked {
   position:relative; overflow:hidden;
 }
@@ -185,7 +179,6 @@ body{
 @keyframes sweep{ to{ left:120%; } }
 @media (prefers-reduced-motion: reduce){ .masked::after{ display:none; animation:none } }
 
-/* Portal section */
 .portal{
   height:360px; 
   border-radius:14px; 
@@ -203,7 +196,6 @@ body{
   transition: transform var(--transition); 
 }
 
-/* FOOTER */
 .footer{ 
   padding:2rem 1rem; 
   text-align:center; 
@@ -211,19 +203,16 @@ body{
   background: transparent; 
 }
 
-/* MOBILE */
 @media (max-width:767px){
   .hero-card{ grid-template-columns: 1fr; padding:1.2rem; gap:.6rem; }
   .portal{ height:260px; }
 }
 
-/* page transitions */
 .page-fade-enter{ opacity:0; transform: scale(.99); transition: opacity 420ms ease, transform 420ms ease; }
 .page-fade-enter.show{ opacity:1; transform:none; }
 
 body.fade-out { opacity: 0; transition: opacity 360ms ease; }
 
-/* floating animation */
 @keyframes float-slow {
   0% { transform: translateY(0px); }
   50% { transform: translateY(-8px); }
@@ -234,14 +223,9 @@ body.fade-out { opacity: 0; transition: opacity 360ms ease; }
   animation: float-slow 6s ease-in-out infinite;
 }
 
-/* ------------------------------------------------------------- */
-/*             FULLSCREEN / DEDICATED VIEWER STYLES             */
-/*           (isolated, minimal conflict with existing CSS)     */
-/* ------------------------------------------------------------- */
 
 :root.fs-open, html.fs-open, body.fs-open { overflow: hidden !important; height: 100%; }
 
-/* viewer backdrop + shell */
 .fs-viewer {
   position: fixed;
   inset: 0;
@@ -259,7 +243,6 @@ body.fade-out { opacity: 0; transition: opacity 360ms ease; }
   pointer-events: auto;
 }
 
-/* backdrop */
 .fs-backdrop {
   position: absolute;
   inset: 0;
@@ -268,7 +251,6 @@ body.fade-out { opacity: 0; transition: opacity 360ms ease; }
   transition: opacity 320ms ease;
 }
 
-/* shell */
 .fs-shell {
   position: relative;
   max-width: 1200px;
@@ -284,7 +266,6 @@ body.fade-out { opacity: 0; transition: opacity 360ms ease; }
   z-index: 10;
 }
 
-/* The content area (media + meta) */
 .fs-body {
   display: grid;
   grid-template-columns: 1fr;
@@ -292,7 +273,6 @@ body.fade-out { opacity: 0; transition: opacity 360ms ease; }
   padding: 22px;
 }
 
-/* media */
 .fs-media {
   display: flex;
   align-items: center;
@@ -313,7 +293,6 @@ body.fade-out { opacity: 0; transition: opacity 360ms ease; }
   object-fit: cover;
 }
 
-/* meta */
 .fs-meta {
   padding: 4px 6px 6px 6px;
   color: var(--muted);
@@ -333,7 +312,6 @@ body.fade-out { opacity: 0; transition: opacity 360ms ease; }
   line-height: 1.45;
 }
 
-/* controls */
 .fs-close {
   position: absolute;
   top: 10px;
@@ -377,7 +355,6 @@ body.fade-out { opacity: 0; transition: opacity 360ms ease; }
   transform: translateY(0) scale(1);
 }
 
-/* smaller screens adjustments */
 @media (max-width: 900px) {
   .fs-media { min-height: 46vh; max-height: 62vh; }
   .fs-nav { width: 46px; height: 52px; font-size: 26px; }
@@ -385,39 +362,29 @@ body.fade-out { opacity: 0; transition: opacity 360ms ease; }
   .fs-meta h3 { font-size: 1.15rem; }
 }
 
-/* subtle hover effect on image */
 .fs-viewer.fs-show .fs-media img {
   transform: scale(1);
 }
 
-/* hide nav on single-card pages? keep it shown — user can navigate looped */
-
-/* ---------------------- MICRO-INTERACTIONS ---------------------- */
-
-/* Floating animation for all card images */
 .card .thumb {
   animation: float-slow 6s ease-in-out infinite;
   transform-origin: center;
 }
 
-/* Pause float on hover to preserve your current scale effect */
 .card:hover .thumb {
   animation-play-state: paused;
 }
 
-/* Floating animation keyframes */
 @keyframes float-slow {
   0% { transform: translateY(0px); }
   50% { transform: translateY(-6px); }
   100% { transform: translateY(0px); }
 }
 
-/* Neon glow on hover */
 .card:hover {
   box-shadow: 0 28px 90px rgba(139, 233, 253, 0.5);
 }
 
-/* Ripple click effect for cards and CTA buttons */
 .card, .btn-cta {
   position: relative;
   overflow: hidden;
@@ -442,7 +409,6 @@ body.fade-out { opacity: 0; transition: opacity 360ms ease; }
   transition: transform 0.3s ease, opacity 0.3s ease;
 }
 
-/* Optional: slight bounce effect on hero card when page loads */
 .hero-card {
   animation: hero-bounce 1.2s ease-out forwards;
   opacity: 0;
@@ -454,30 +420,23 @@ body.fade-out { opacity: 0; transition: opacity 360ms ease; }
   100% { transform: translateY(0); }
 }
 
-
-/* ---------------------- FULLSCREEN / HERO FIX ---------------------- */
-
-/* Ensure fullscreen viewer images fit inside viewport */
 .fs-media img {
-  object-fit: contain; /* prevent cropping */
+  object-fit: contain; 
   width: auto;
   height: 100%;
 }
 
-/* Center images vertically for short images */
 .fs-media {
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-/* Make hero full viewport height */
 .hero {
-  height: 100vh; /* full viewport height */
+  height: 100vh; 
   min-height: 520px;
 }
 
-/* Limit parallax translation to avoid cutting layers */
 .hero .layer {
   transition: transform 700ms cubic-bezier(.2,.9,.25,1);
 }

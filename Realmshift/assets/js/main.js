@@ -1,8 +1,7 @@
-/* Main JS for Parallel Realities */
 document.addEventListener('DOMContentLoaded', () => {
 
   const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  const hero = document.querySelector('.hero'); // single hero reference
+  const hero = document.querySelector('.hero'); 
 
   /* ---------------------- MICRO-INTERACTIONS ---------------------- */
   if(hero && !reduce){
@@ -117,11 +116,6 @@ document.addEventListener('DOMContentLoaded', () => {
   } else {
     console.warn('tsParticles not loaded - check CDN include');
   }
-
-  /* ------------------------------------------------------------- */
-  /*                ⭐ FULLSCREEN / DEDICATED VIEWER ⭐            */
-  /*    (image + title + description, keyboard, arrows, touch)    */
-  /* ------------------------------------------------------------- */
 
   const fsHtml = `
   <div id="fs-viewer" class="fs-viewer" aria-hidden="true">
